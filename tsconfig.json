@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
-      "outDir": "lib",
+      "outDir": "dist",
       "target": "ES2021",
       "noEmitOnError": false,
+      
       "strict": true
     },
     "include": [
