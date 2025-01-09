@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
-      "outDir": "dist",
-      "target": "ES2021",
-      "noEmitOnError": false,
-      
-      "strict": true
+        "outDir": "js",
+        "target": "ES2021",
+        "noEmitOnError": false,
+        "strict": true,
+        "moduleResolution": "node"
     },
     "include": [
-      "src/**/*.ts"
+        "src/**/*.ts"
     ]
-  }
+}
