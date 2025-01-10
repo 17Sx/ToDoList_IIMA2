@@ -1,3 +1,4 @@
+import { hashPassword } from "./hash.js";
 import supabase from "./init.js";
 import user from "./login.js";
 const getUsers = async () => {
@@ -13,4 +14,17 @@ const getUsers = async () => {
     console.log(data);
     return data;
 };
-const users = getUsers();
+const getUser = async (email, password) => {
+    const { data, error } = await supabase.from("user").select("*").eq("email", email);
+    if (error) {
+        console.error(error);
+        return error.message;
+    }
+    if (data.length === 0) {
+        return false;
+    }
+    if (data[0].password === hashPassword(password)) {
+        return data[0];
+    }
+};
+export default getUser;
