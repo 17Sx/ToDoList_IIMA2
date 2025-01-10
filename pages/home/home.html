@@ -3,28 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Home | ToDoList </title>
+    <title>Home | ToDoList</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://kit.fontawesome.com/a48e8b48f0.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<h1>ToDo List</h1>
+<div class="grain"></div>
+<header>
+    <h1>ToDoList</h1>
+    <nav>
+        <ul>
+            <li><a href="../signup/signup.html">Signup</a></li>
+            <li><a href="../login/login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
 
-<form id="taskForm">
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title" required><br><br>
+
+<main>
+
+<div class="presentation">
+    <div class="presentation-text">
+        <div class="presentation-title">
+            <h2>Welcome to</h2>
+            <h2 class="todo">ToDoList</h2>
+        </div>
+        <div class="presentation-description">
+            <p>Take control of your future with ToDoList. <br> Simply create an account and start organizing your life today!</p>
+            <a href="#task">Start Now! <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="features">
+
+    <div class="features-title">
+        <h2>Features</h2>
+    </div>
+    <div class="features-content">
+
+        <div id="feature-1" class="feature">
+            <h3>Checklist <button id="btn-1" onclick="toggleDescription('desc-1', 'btn-1')">+</button></h3>
+            <p id="desc-1">Keep track of your tasks with a simple checklist.</p>
+        </div>
+        
+        <div id="feature-2" class="feature">
+            <h3>Deadline <button id="btn-2" onclick="toggleDescription('desc-2', 'btn-2')">+</button></h3>
+            <p id="desc-2">Set a deadline for each task to keep you on track.</p>
+        </div>
+        
+        <div id="feature-3" class="feature">
+            <h3>Easy to Use <button id="btn-3" onclick="toggleDescription('desc-3', 'btn-3')">+</button></h3>
+            <p id="desc-3">Simple and intuitive design makes it easy to use.</p>
+        </div>
+        
+        <div id="feature-4" class="feature">
+            <h3>Free <button id="btn-4" onclick="toggleDescription('desc-4', 'btn-4')">+</button></h3>
+            <p id="desc-4">ToDoList is free to use and always will be.</p>
+        </div>
+        
+    </div>
+</div>
+
+<div id="task" class="task">
+    <h2>Add Task</h2>
+<div class="taskform">
+    <form id="taskForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+        
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea><br><br>
+        
+        <label for="deadline">Deadline:</label>
+        <input type="date" id="deadline" name="deadline" required><br><br>
+        
+        <button type="submit">Add a new Task</button>
+    </form>
+</div>
+
+    <ul id="taskList"></ul>
+</div>
+
+</main>
+
+<div class="credits">
+    <p>created by <a target="_blank" href="https://github.com/17Sx"> @17Sx</a> & <a target="_blank" href="https://github.com/JulienMnt"> @JulienMnt</a></p>
+</div>
+
+<script>
+function toggleDescription(descId, btnId) {
+    const desc = document.getElementById(descId);
+    const btn = document.getElementById(btnId);
+    const feature = btn.closest('.feature'); 
     
-    <label for="description">Description:</label>
-    <textarea id="description" name="description" required></textarea><br><br>
-    
-    <label for="deadline">Deadline:</label>
-    <input type="date" id="deadline" name="deadline" required><br><br>
-    
-    <button type="submit">Add Task</button>
-</form>
+    if (desc.style.display === "block") {
+        desc.style.display = "none";
+        feature.classList.remove('open'); 
+        btn.textContent = "+"; 
+    } else {
+        document.querySelectorAll('.feature').forEach((f) => {
+            const p = f.querySelector('p');
+            const b = f.querySelector('button');
+            p.style.display = "none";
+            f.classList.remove('open');
+            b.textContent = "+";
+        });
+        
+        desc.style.display = "block";
+        feature.classList.add('open'); 
+        btn.textContent = "−"; 
+    }
+}
+
+</script>
 <script type="module" src="../../js/script/affichertask.js"></script>
 <script type="module" src="../../js/script/task.js"></script>
-
-<ul id="taskList"></ul>
-    
 </body>
 </html>
