@@ -1,2 +1,4 @@
-import supabase from "./init.js";
+
+import supabaseClient from "./init.js";
+
 

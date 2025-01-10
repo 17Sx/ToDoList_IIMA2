@@ -4,11 +4,15 @@
     "dev": "npx tsc --watch"
   },
   "devDependencies": {
-    "typescript": "^5.7.2"
+    "bcrypt": "^5.1.1",
+    "dotenv-webpack": "^8.1.0",
+    "typescript": "^5.7.3",
+    "webpack-cli": "^6.0.1"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.47.12",
     "bcrypt-ts": "^5.0.3",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
   }
 }
