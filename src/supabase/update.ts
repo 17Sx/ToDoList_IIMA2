@@ -1,4 +1,4 @@
-import supabase from "./init.js";
+import supabaseClient from "./init.js";
 import user from "./login.js";
 import { hashPassword } from "./hash.js";
  
@@ -9,7 +9,7 @@ const updateUser = async () => {
   }
  
   const pwd = await hashPassword("plainPassword");
-  const { data, error } = await supabase
+  const { data, error } = await supabaseClient
     .from("user")
     .update({
       password: pwd,

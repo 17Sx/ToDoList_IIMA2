@@ -1,34 +1,20 @@
-import supabase from "./../init.js";
+import supabaseClient from "./../init.js";
 import user from "./../login.js";
- 
-const getJoinedData = async () => {
-  const userLogged = await user;
-  if (!userLogged) {
-    return false;
-  }
-  const { data, error } = await supabase.from("user").select("*, task(*)");
- 
-  if (error) {
-    console.error(error);
-    return false;
-  }
- 
-  console.log(data);
-  return data;
-};
 
-const getTask = async () => {
-    const data = await getJoinedData();
-
-    if (!data) {
+  const getTasksByUser = async () => {
+    const id = JSON.parse(localStorage.getItem("user")!);
+    if (!id) {
+      return false;
+    }
+    const { data, error } = await supabaseClient.from("user").select("*, task(*)").eq("id", id);
+   
+    if (error) {
+      console.error(error);
       return false;
     }
    
-    data.map((user) => {
-      console.log(`${user.id} : ${user.email}`, user.task);
-    });
-   
-    return true;
+    console.log(data);
+    return data;
   };
-   
-  const task = getTask();
+  
+  export default getTasksByUser;

@@ -1,10 +1,7 @@
-import * as dotenv from "dotenv";
-dotenv.config(); 
+import "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2";
 
-import { createClient } from "@supabase/supabase-js";
+const supabaseUrl: string = "https://eylawpnbxndqpddarztn.supabase.co/";
+const supabaseKey: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5bGF3cG5ieG5kcXBkZGFyenRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYzMzU5NTMsImV4cCI6MjA1MTkxMTk1M30.clsy1sskYFys0A0u2feI_ifTd0J3abEg9UCvZJpQ6Ag";
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
-const supabaseUrl: string = process.env.SUPABASE_URL || "";
-const supabaseKey: string = process.env.SUPABASE_KEY || "";
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-export default supabase;
+export default supabaseClient;

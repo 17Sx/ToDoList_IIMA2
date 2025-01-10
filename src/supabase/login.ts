@@ -1,9 +1,9 @@
-import supabase from "./init.js";
+import supabaseClient from "./init.js";
  
 const signIn = async () => {
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email: process.env.SUPABASE_USER || "",
-    password: process.env.SUPABASE_PASSWORD || "",
+  const { data, error } = await supabaseClient.auth.signInWithPassword({
+    email: "noa.obringer@gmail.com",
+    password: "uI1lV9OJpFQoKATV",
   });
  
   if (error) {
