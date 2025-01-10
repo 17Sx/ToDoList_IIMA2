@@ -18,7 +18,7 @@ Pour la BDD Supabase a été utilisée. Cette application utilise une base de do
 ## Prérequis
 
 - [Node.js](https://nodejs.org/) installé sur votre machine
-- Un compte et une base de données configurés sur Supabase
+- Un compte et une base de données configurés sur [Supabase](https://supabase.com/)
 
 ## Installation
 
