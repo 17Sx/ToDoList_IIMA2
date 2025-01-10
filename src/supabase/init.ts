@@ -1,3 +1,4 @@
+
 import "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2";
 
 const supabaseUrl: string = "https://eylawpnbxndqpddarztn.supabase.co/";
@@ -5,3 +6,4 @@ const supabaseKey: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdX
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 export default supabaseClient;
+

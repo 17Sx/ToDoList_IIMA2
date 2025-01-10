@@ -1,4 +1,6 @@
+
 import supabaseClient from "./init.js";
+
 import user from "./login.js";
  
 const deleteUser = async () => {
@@ -7,7 +9,9 @@ const deleteUser = async () => {
     return false;
   }
  
+
   const response = await supabaseClient
+
     .from("user")
     .delete()
     .eq("id", "6b749609-8cf3-4611-a6d9-91a6c339b3b8");
