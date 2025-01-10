@@ -15,4 +15,3 @@ form.addEventListener('submit', async (e) => {
         alert('Error creating user');
     }
 });
-

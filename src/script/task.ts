@@ -11,5 +11,8 @@ form.addEventListener('submit', async (e: SubmitEvent) => {
     const description = formData.get('description') as string;
     console.log(userId);
     const taskCreated = await insertTask(task, description);
+    if (taskCreated) {
+        window.location.reload();
+    }
 
 });

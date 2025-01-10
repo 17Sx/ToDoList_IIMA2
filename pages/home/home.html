@@ -66,7 +66,7 @@
     </div>
 </div>
 
-<div id="task" class="task">
+<div id="task" class="tasks">
     <h2>Add Task</h2>
 <div class="taskform">
     <form id="taskForm">
@@ -79,11 +79,16 @@
         <label for="deadline">Deadline:</label>
         <input type="date" id="deadline" name="deadline" required><br><br>
         
-        <button type="submit">Add a new Task</button>
+            <div class="btn">
+                <button type="submit">Add a new Task</button>
+            </div>
     </form>
 </div>
 
+<h2>Task List</h2>
+<div class="tasklist-container">
     <ul id="taskList"></ul>
+</div>
 </div>
 
 </main>
