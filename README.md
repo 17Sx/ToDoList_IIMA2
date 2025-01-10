@@ -1,4 +1,5 @@
 17Sx = Noa Obringer
+
 JulienMnt = Julien Menet
 
 ---
@@ -23,6 +24,7 @@ ToDoList_IIMA2 est une application web de gestion de tâches développée en Jav
 
    ```bash
    git clone https://github.com/17Sx/ToDoList_IIMA2.git
+   ```
    
 Accédez au répertoire du projet :
 
@@ -35,3 +37,7 @@ Installez les dépendances :
   ```bash
   npm install
   ```
+
+---
+
+Made with ❤️ by 17Sx
