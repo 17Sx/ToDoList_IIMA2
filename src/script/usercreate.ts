@@ -10,7 +10,7 @@ form.addEventListener('submit', async (e: SubmitEvent) => {
     const lastName = formData.get('lastName') as string;
     const user = await createUser(firstName, lastName, email, password);
     if (user) {
-        console.log(user);
+        window.location.href = '../home/home.html';
     } else {
         alert('Error creating user');
     }

@@ -9,7 +9,7 @@ form.addEventListener('submit', async (e: SubmitEvent) => {
     const user = await getUser(email, password);
     if (user) {
         localStorage.setItem('user', JSON.stringify(user.id));
-        console.log(user);
+        window.location.href = '../home/home.html';
     } else {
         alert('Error logging in');
     }
